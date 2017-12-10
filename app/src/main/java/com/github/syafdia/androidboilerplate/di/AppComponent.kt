@@ -4,8 +4,6 @@ import com.github.syafdia.androidboilerplate.App
 import dagger.Component
 import dagger.android.support.AndroidSupportInjectionModule
 import javax.inject.Singleton
-import dagger.android.AndroidInjector
-
 
 
 @Singleton
@@ -14,6 +12,8 @@ import dagger.android.AndroidInjector
             AndroidSupportInjectionModule::class,
             AppModule::class,
             ActivityModule::class,
+            FragmentModule::class,
+            DataSourceModule::class,
             RepositoryModule::class
         ]
 )

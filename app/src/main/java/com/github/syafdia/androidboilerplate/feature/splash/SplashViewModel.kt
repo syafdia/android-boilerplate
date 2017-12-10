@@ -7,6 +7,5 @@ import com.github.syafdia.androidboilerplate.data.repository.UserRepository
 class SplashViewModel(var userRepository: UserRepository): ViewModel() {
 
     fun startFoo() {
-        userRepository.logFoo()
     }
 }

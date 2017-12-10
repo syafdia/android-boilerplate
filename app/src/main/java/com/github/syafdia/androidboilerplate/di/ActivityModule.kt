@@ -1,6 +1,7 @@
 package com.github.syafdia.androidboilerplate.di
 
 import com.github.syafdia.androidboilerplate.feature.login.LoginActivity
+import com.github.syafdia.androidboilerplate.feature.login.LoginFragment
 import com.github.syafdia.androidboilerplate.feature.login.LoginModule
 import dagger.Module
 import com.github.syafdia.androidboilerplate.feature.splash.SplashActivity
