@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Palette colors -->
+    <color name="primaryDark">#1976D2</color>
+    <color name="primary">#2196F3</color>
+    <color name="accent">#FF4081</color>
+    <color name="primaryText">#212121</color>
+    <color name="secondaryText">#757575</color>
+    <color name="icons">#ffffff</color>
+    <color name="divider">#BDBDBD</color>
+
+    <!-- reds -->
+    <color name="mdRed50">#FFEBEE</color>
+    <color name="mdRed100">#FFCDD2</color>
+    <color name="mdRed200">#EF9A9A</color>
+    <color name="mdRed300">#E57373</color>
+    <color name="mdRed400">#EF5350</color>
+    <color name="mdRed500">#F44336</color>
+    <color name="mdRed600">#E53935</color>
+    <color name="mdRed700">#D32F2F</color>
+    <color name="mdRed800">#C62828</color>
+    <color name="mdRed900">#B71C1C</color>
+    <color name="mdRedA100">#FF8A80</color>
+    <color name="mdRedA200">#FF5252</color>
+    <color name="mdRedA400">#FF1744</color>
+    <color name="mdRedA700">#D50000</color>
+
+    <!-- pinks -->
+    <color name="mdPink50">#FCE4EC</color>
+    <color name="mdPink100">#F8BBD0</color>
+    <color name="mdPink200">#F48FB1</color>
+    <color name="mdPink300">#F06292</color>
+    <color name="mdPink400">#EC407A</color>
+    <color name="mdPink500">#E91E63</color>
+    <color name="mdPink600">#D81B60</color>
+    <color name="mdPink700">#C2185B</color>
+    <color name="mdPink800">#AD1457</color>
+    <color name="mdPink900">#880E4F</color>
+    <color name="mdPinkA100">#FF80AB</color>
+    <color name="mdPinkA200">#FF4081</color>
+    <color name="mdPinkA400">#F50057</color>
+    <color name="mdPinkA700">#C51162</color>
+
+    <!-- purples -->
+    <color name="mdPurple50">#F3E5F5</color>
+    <color name="mdPurple100">#E1BEE7</color>
+    <color name="mdPurple200">#CE93D8</color>
+    <color name="mdPurple300">#BA68C8</color>
+    <color name="mdPurple400">#AB47BC</color>
+    <color name="mdPurple500">#9C27B0</color>
+    <color name="mdPurple600">#8E24AA</color>
+    <color name="mdPurple700">#7B1FA2</color>
+    <color name="mdPurple800">#6A1B9A</color>
+    <color name="mdPurple900">#4A148C</color>
+    <color name="mdPurpleA100">#EA80FC</color>
+    <color name="mdPurpleA200">#E040FB</color>
+    <color name="mdPurpleA400">#D500F9</color>
+    <color name="mdPurpleA700">#AA00FF</color>
+
+    <!-- deep purples -->
+    <color name="mdDeepPurple50">#EDE7F6</color>
+    <color name="mdDeepPurple100">#D1C4E9</color>
+    <color name="mdDeepPurple200">#B39DDB</color>
+    <color name="mdDeepPurple300">#9575CD</color>
+    <color name="mdDeepPurple400">#7E57C2</color>
+    <color name="mdDeepPurple500">#673AB7</color>
+    <color name="mdDeepPurple600">#5E35B1</color>
+    <color name="mdDeepPurple700">#512DA8</color>
+    <color name="mdDeepPurple800">#4527A0</color>
+    <color name="mdDeepPurple900">#311B92</color>
+    <color name="mdDeepPurpleA100">#B388FF</color>
+    <color name="mdDeepPurpleA200">#7C4DFF</color>
+    <color name="mdDeepPurpleA400">#651FFF</color>
+    <color name="mdDeepPurpleA700">#6200EA</color>
+
+    <!-- indigo -->
+    <color name="mdIndigo50">#E8EAF6</color>
+    <color name="mdIndigo100">#C5CAE9</color>
+    <color name="mdIndigo200">#9FA8DA</color>
+    <color name="mdIndigo300">#7986CB</color>
+    <color name="mdIndigo400">#5C6BC0</color>
+    <color name="mdIndigo500">#3F51B5</color>
+    <color name="mdIndigo600">#3949AB</color>
+    <color name="mdIndigo700">#303F9F</color>
+    <color name="mdIndigo800">#283593</color>
+    <color name="mdIndigo900">#1A237E</color>
+    <color name="mdIndigoA100">#8C9EFF</color>
+    <color name="mdIndigoA200">#536DFE</color>
+    <color name="mdIndigoA400">#3D5AFE</color>
+    <color name="mdIndigoA700">#304FFE</color>
+
+    <!--blue-->
+    <color name="mdBlue50">#E3F2FD</color>
+    <color name="mdBlue100">#BBDEFB</color>
+    <color name="mdBlue200">#90CAF9</color>
+    <color name="mdBlue300">#64B5F6</color>
+    <color name="mdBlue400">#42A5F5</color>
+    <color name="mdBlue500">#2196F3</color>
+    <color name="mdBlue600">#1E88E5</color>
+    <color name="mdBlue700">#1976D2</color>
+    <color name="mdBlue800">#1565C0</color>
+    <color name="mdBlue900">#0D47A1</color>
+    <color name="mdBlueA100">#82B1FF</color>
+    <color name="mdBlueA200">#448AFF</color>
+    <color name="mdBlueA400">#2979FF</color>
+    <color name="mdBlueA700">#2962FF</color>
+
+    <!-- light blue-->
+    <color name="mdLightBlue50">#E1F5FE</color>
+    <color name="mdLightBlue100">#B3E5FC</color>
+    <color name="mdLightBlue200">#81D4fA</color>
+    <color name="mdLightBlue300">#4fC3F7</color>
+    <color name="mdLightBlue400">#29B6FC</color>
+    <color name="mdLightBlue500">#03A9F4</color>
+    <color name="mdLightBlue600">#039BE5</color>
+    <color name="mdLightBlue700">#0288D1</color>
+    <color name="mdLightBlue800">#0277BD</color>
+    <color name="mdLightBlue900">#01579B</color>
+    <color name="mdLightBlueA100">#80D8FF</color>
+    <color name="mdLightBlueA200">#40C4FF</color>
+    <color name="mdLightBlueA400">#00B0FF</color>
+    <color name="mdLightBlueA700">#0091EA</color>
+
+    <!-- cyan -->
+    <color name="mdCyan50">#E0F7FA</color>
+    <color name="mdCyan100">#B2EBF2</color>
+    <color name="mdCyan200">#80DEEA</color>
+    <color name="mdCyan300">#4DD0E1</color>
+    <color name="mdCyan400">#26C6DA</color>
+    <color name="mdCyan500">#00BCD4</color>
+    <color name="mdCyan600">#00ACC1</color>
+    <color name="mdCyan700">#0097A7</color>
+    <color name="mdCyan800">#00838F</color>
+    <color name="mdCyan900">#006064</color>
+    <color name="mdCyanA100">#84FFFF</color>
+    <color name="mdCyanA200">#18FFFF</color>
+    <color name="mdCyanA400">#00E5FF</color>
+    <color name="mdCyanA700">#00B8D4</color>
+
+    <!-- teal -->
+    <color name="mdTeal50">#E0F2F1</color>
+    <color name="mdTeal100">#B2DFDB</color>
+    <color name="mdTeal200">#80CBC4</color>
+    <color name="mdTeal300">#4DB6AC</color>
+    <color name="mdTeal400">#26A69A</color>
+    <color name="mdTeal500">#009688</color>
+    <color name="mdTeal600">#00897B</color>
+    <color name="mdTeal700">#00796B</color>
+    <color name="mdTeal800">#00695C</color>
+    <color name="mdTeal900">#004D40</color>
+    <color name="mdTealA100">#A7FFEB</color>
+    <color name="mdTealA200">#64FFDA</color>
+    <color name="mdTealA400">#1DE9B6</color>
+    <color name="mdTealA700">#00BFA5</color>
+
+    <!-- green -->
+    <color name="mdGreen50">#E8F5E9</color>
+    <color name="mdGreen100">#C8E6C9</color>
+    <color name="mdGreen200">#A5D6A7</color>
+    <color name="mdGreen300">#81C784</color>
+    <color name="mdGreen400">#66BB6A</color>
+    <color name="mdGreen500">#4CAF50</color>
+    <color name="mdGreen600">#43A047</color>
+    <color name="mdGreen700">#388E3C</color>
+    <color name="mdGreen800">#2E7D32</color>
+    <color name="mdGreen900">#1B5E20</color>
+    <color name="mdGreenA100">#B9F6CA</color>
+    <color name="mdGreenA200">#69F0AE</color>
+    <color name="mdGreenA400">#00E676</color>
+    <color name="mdGreenA700">#00C853</color>
+
+    <!--light green-->
+    <color name="mdLightAreen50">#F1F8E9</color>
+    <color name="mdLightAreen100">#DCEDC8</color>
+    <color name="mdLightAreen200">#C5E1A5</color>
+    <color name="mdLightAreen300">#AED581</color>
+    <color name="mdLightAreen400">#9CCC65</color>
+    <color name="mdLightAreen500">#8BC34A</color>
+    <color name="mdLightAreen600">#7CB342</color>
+    <color name="mdLightAreen700">#689F38</color>
+    <color name="mdLightAreen800">#558B2F</color>
+    <color name="mdLightAreen900">#33691E</color>
+    <color name="mdLightAreenA100">#CCFF90</color>
+    <color name="mdLightAreenA200">#B2FF59</color>
+    <color name="mdLightAreenA400">#76FF03</color>
+    <color name="mdLightAreenA700">#64DD17</color>
+
+    <!-- lime-->
+    <color name="mdLime50">#F9FBE7</color>
+    <color name="mdLime100">#F0F4C3</color>
+    <color name="mdLime200">#E6EE9C</color>
+    <color name="mdLime300">#DCE775</color>
+    <color name="mdLime400">#D4E157</color>
+    <color name="mdLime500">#CDDC39</color>
+    <color name="mdLime600">#C0CA33</color>
+    <color name="mdLime700">#A4B42B</color>
+    <color name="mdLime800">#9E9D24</color>
+    <color name="mdLime900">#827717</color>
+    <color name="mdLimeA100">#F4FF81</color>
+    <color name="mdLimeA200">#EEFF41</color>
+    <color name="mdLimeA400">#C6FF00</color>
+    <color name="mdLimeA700">#AEEA00</color>
+
+    <!--yellow -->
+    <color name="mdYellow50">#FFFDE7</color>
+    <color name="mdYellow100">#FFF9C4</color>
+    <color name="mdYellow200">#FFF590</color>
+    <color name="mdYellow300">#FFF176</color>
+    <color name="mdYellow400">#FFEE58</color>
+    <color name="mdYellow500">#FFEB3B</color>
+    <color name="mdYellow600">#FDD835</color>
+    <color name="mdYellow700">#FBC02D</color>
+    <color name="mdYellow800">#F9A825</color>
+    <color name="mdYellow900">#F57F17</color>
+    <color name="mdYellowA100">#FFFF82</color>
+    <color name="mdYellowA200">#FFFF00</color>
+    <color name="mdYellowA400">#FFEA00</color>
+    <color name="mdYellowA700">#FFD600</color>
+
+    <!--amber-->
+    <color name="mdAmber50">#FFF8E1</color>
+    <color name="mdAmber100">#FFECB3</color>
+    <color name="mdAmber200">#FFE082</color>
+    <color name="mdAmber300">#FFD54F</color>
+    <color name="mdAmber400">#FFCA28</color>
+    <color name="mdAmber500">#FFC107</color>
+    <color name="mdAmber600">#FFB300</color>
+    <color name="mdAmber700">#FFA000</color>
+    <color name="mdAmber800">#FF8F00</color>
+    <color name="mdAmber900">#FF6F00</color>
+    <color name="mdAmberA100">#FFE57F</color>
+    <color name="mdAmberA200">#FFD740</color>
+    <color name="mdAmberA400">#FFC400</color>
+    <color name="mdAmberA700">#FFAB00</color>
+
+    <!--orange-->
+    <color name="mdOrange50">#FFF3E0</color>
+    <color name="mdOrange100">#FFE0B2</color>
+    <color name="mdOrange200">#FFCC80</color>
+    <color name="mdOrange300">#FFB74D</color>
+    <color name="mdOrange400">#FFA726</color>
+    <color name="mdOrange500">#FF9800</color>
+    <color name="mdOrange600">#FB8C00</color>
+    <color name="mdOrange700">#F57C00</color>
+    <color name="mdOrange800">#EF6C00</color>
+    <color name="mdOrange900">#E65100</color>
+    <color name="mdOrangeA100">#FFD180</color>
+    <color name="mdOrangeA200">#FFAB40</color>
+    <color name="mdOrangeA400">#FF9100</color>
+    <color name="mdOrangeA700">#FF6D00</color>
+
+    <!--deep orange-->
+    <color name="mdDeepOrange50">#FBE9A7</color>
+    <color name="mdDeepOrange100">#FFCCBC</color>
+    <color name="mdDeepOrange200">#FFAB91</color>
+    <color name="mdDeepOrange300">#FF8A65</color>
+    <color name="mdDeepOrange400">#FF7043</color>
+    <color name="mdDeepOrange500">#FF5722</color>
+    <color name="mdDeepOrange600">#F4511E</color>
+    <color name="mdDeepOrange700">#E64A19</color>
+    <color name="mdDeepOrange800">#D84315</color>
+    <color name="mdDeepOrange900">#BF360C</color>
+    <color name="mdDeepOrangeA100">#FF9E80</color>
+    <color name="mdDeepOrangeA200">#FF6E40</color>
+    <color name="mdDeepOrangeA400">#FF3D00</color>
+    <color name="mdDeepOrangeA700">#DD2600</color>
+
+    <!--brown -->
+    <color name="md_brown_50">#EFEBE9</color>
+    <color name="md_brown_100">#D7CCC8</color>
+    <color name="md_brown_200">#BCAAA4</color>
+    <color name="md_brown_300">#A1887F</color>
+    <color name="md_brown_400">#8D6E63</color>
+    <color name="md_brown_500">#795548</color>
+    <color name="md_brown_600">#6D4C41</color>
+    <color name="md_brown_700">#5D4037</color>
+    <color name="md_brown_800">#4E342E</color>
+    <color name="md_brown_900">#3E2723</color>
+
+    <!--grey-->
+    <color name="mdGrey50">#FAFAFA</color>
+    <color name="mdGrey100">#F5F5F5</color>
+    <color name="mdGrey200">#EEEEEE</color>
+    <color name="mdGrey300">#E0E0E0</color>
+    <color name="mdGrey400">#BDBDBD</color>
+    <color name="mdGrey500">#9E9E9E</color>
+    <color name="mdGrey600">#757575</color>
+    <color name="mdGrey700">#616161</color>
+    <color name="mdGrey800">#424242</color>
+    <color name="mdGrey900">#212121</color>
+    <color name="mdBlack1000">#000000</color>
+    <color name="mdWhite1000">#ffffff</color>
+
+    <!--blue grey-->
+    <color name="mdBlueGrey50">#ECEFF1</color>
+    <color name="mdBlueGrey100">#CFD8DC</color>
+    <color name="mdBlueGrey200">#B0BBC5</color>
+    <color name="mdBlueGrey300">#90A4AE</color>
+    <color name="mdBlueGrey400">#78909C</color>
+    <color name="mdBlueGrey500">#607D8B</color>
+    <color name="mdBlueGrey600">#546E7A</color>
+    <color name="mdBlueGrey700">#455A64</color>
+    <color name="mdBlueGrey800">#37474F</color>
+    <color name="mdBlueGrey900">#263238</color>
+
+</resources>
