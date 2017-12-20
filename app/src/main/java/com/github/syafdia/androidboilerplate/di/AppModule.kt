@@ -4,11 +4,23 @@ import android.content.Context
 import com.github.syafdia.androidboilerplate.App
 import dagger.Binds
 import dagger.Module
+import dagger.Provides
+import javax.inject.Singleton
+
+
 
 
 @Module
-abstract class AppModule(private val app: App) {
+class AppModule(private val app: App) {
 
-    @Binds
-    abstract fun bindContext(app: App): Context
+    @Provides
+    fun provideContext(): Context {
+        return app.baseContext
+    }
+
+    @Provides
+    @Singleton
+    fun provideOkhttpClient(): OkHttpClient {
+        return
+    }
 }
