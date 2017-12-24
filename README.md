@@ -1,8 +1,9 @@
 # Android Boilerplate
 
-Simple Android boilerplate using MVVM architecture. This boilerplate contains :
+Simple Android boilerplate using Model View ViewModel (MVVM) architecture. This boilerplate contains :
 
- * Kotlin as primary language
+ * Kotlin
+ * Dagger 2
  * Authentication
  * Authorization
  * Reactive Extension
