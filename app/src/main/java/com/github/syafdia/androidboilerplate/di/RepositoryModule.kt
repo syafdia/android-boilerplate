@@ -2,7 +2,8 @@ package com.github.syafdia.androidboilerplate.di
 
 import com.github.syafdia.androidboilerplate.data.repository.UserRepository
 import com.github.syafdia.androidboilerplate.data.source.api.UserApi
-import com.github.syafdia.androidboilerplate.data.source.room.UserRoom
+import com.github.syafdia.androidboilerplate.data.source.room.UserDao
+import com.github.syafdia.androidboilerplate.data.source.storage.UserStorage
 import dagger.Module
 import dagger.Provides
 
@@ -10,7 +11,7 @@ import dagger.Provides
 class RepositoryModule {
 
     @Provides
-    fun provideUserRepository(userApi: UserApi, userRoom: UserRoom): UserRepository {
-        return UserRepository(userApi, userRoom)
+    fun provideUserRepository(userApi: UserApi, userDao: UserDao, userStorage: UserStorage): UserRepository {
+        return UserRepository(userApi, userDao, userStorage)
     }
 }

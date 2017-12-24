@@ -6,11 +6,13 @@ import android.support.v7.app.AppCompatActivity
 import dagger.android.AndroidInjection
 
 
-abstract class BaseActivity: AppCompatActivity() {
+abstract class BaseActivity : AppCompatActivity() {
+
+    abstract val viewId: Int
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
         AndroidInjection.inject(this)
+        super.onCreate(savedInstanceState)
     }
 
     fun setContentFragment(containerId: Int, createFragment: () -> Fragment) {

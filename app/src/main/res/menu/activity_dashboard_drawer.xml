@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view"
+    >
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/item_dashboard_navDashboard"
+            android:icon="@drawable/dashboard_navicondashboard"
+            android:title="Dashboard"
+            android:checked="true"
+            />
+        <item
+            android:id="@+id/item_dashboard_navFeature1"
+            android:icon="@drawable/dashboard_navfeature"
+            android:title="Feature 1"
+            />
+        <item
+            android:id="@+id/item_dashboard_navFeature2"
+            android:icon="@drawable/dashboard_navfeature"
+            android:title="Feature 2"
+            />
+    </group>
+
+    <item android:title="Account">
+        <menu>
+            <item
+                android:id="@+id/item_dashboard_navSetting"
+                android:icon="@drawable/dashboard_naviconsetting"
+                android:title="Settings"
+                android:visible="false"
+                />
+            <item
+                android:id="@+id/item_dashboard_navLogout"
+                android:icon="@drawable/dashboard_naviconlogout"
+                android:title="Log Out"
+                />
+
+        </menu>
+    </item>
+
+</menu>

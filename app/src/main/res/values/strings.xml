@@ -1,6 +1,27 @@
 <resources>
-    <string name="app_name">Android Boilerplate</string>
-    <string name="title_activity_login">LoginActivity</string>
+    <string name="all_appName">Android Boilerplate</string>
+    <string name="all_appDetail">Android Boilerplate</string>
+    <string name="all_yes">Yes</string>
+    <string name="all_no">No</string>
+
+    <string name="dummy_shortText">Foo bar baz tar</string>
+
+    <string name="splash_logoDescription">App Logo</string>
+
+    <string name="login_title">LOGIN</string>
+    <string name="login_logoDescription">App Logo</string>
+    <string name="login_labelUsername">Username</string>
+    <string name="login_labelPassword">Password</string>
+    <string name="login_labelLogin">LOGIN</string>
+    <string name="login_errorUsernameRequired">This value is required</string>
+    <string name="login_errorPasswordRequired">This value is required</string>
+
+    <string name="dashboard_confirmLogOut">Are you sure want to log out ?</string>
+    <string name="dashboard_title">@string/all_appName</string>
+    <string name="dashboard_navDrawerOpen">Open navigation drawer</string>
+    <string name="dashboard_navDrawerClose">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

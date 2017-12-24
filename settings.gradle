@@ -1,1 +1,1 @@
-include ':app', ':androidquark'
+include ':app'
