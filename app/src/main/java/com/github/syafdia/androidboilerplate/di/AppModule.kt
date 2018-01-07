@@ -6,7 +6,7 @@ import com.facebook.stetho.okhttp3.StethoInterceptor
 import com.github.syafdia.androidboilerplate.App
 import com.github.syafdia.androidboilerplate.config.AppConfig
 import com.github.syafdia.androidboilerplate.core.apiclient.ApiClient
-import com.github.syafdia.androidboilerplate.core.auth.Auth
+import com.github.syafdia.androidboilerplate.core.Auth
 import com.github.syafdia.androidboilerplate.core.provider.AndroidResourceProvider
 import com.github.syafdia.androidboilerplate.core.provider.AndroidSchedulerProvider
 import com.github.syafdia.androidboilerplate.core.provider.ResourceProvider

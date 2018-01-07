@@ -2,7 +2,7 @@ package com.github.syafdia.androidboilerplate.feature.login
 
 import android.databinding.ObservableBoolean
 import android.databinding.ObservableField
-import com.github.syafdia.androidboilerplate.core.auth.Auth
+import com.github.syafdia.androidboilerplate.core.Auth
 import com.github.syafdia.androidboilerplate.core.provider.ResourceProvider
 import com.github.syafdia.androidboilerplate.core.provider.SchedulerProvider
 import com.github.syafdia.androidboilerplate.feature.BaseViewModel

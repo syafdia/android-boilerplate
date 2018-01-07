@@ -1,6 +1,6 @@
 package com.github.syafdia.androidboilerplate.core.apiclient
 
-import com.github.syafdia.androidboilerplate.core.auth.Auth
+import com.github.syafdia.androidboilerplate.core.Auth
 import io.reactivex.Maybe
 import io.reactivex.Observable
 import okhttp3.FormBody
@@ -57,10 +57,8 @@ class ApiClient(
     private fun createRequestBuilder(): Request.Builder {
         val requestBuilder = Request.Builder()
 
-        if (auth.isAuthenticated()) {
-            val authUser = auth.userSubject.value.blockingGet()
-
-            requestBuilder.addHeader(HEADER_AUTHORIZATION, "Bearer ${authUser?.token}")
+        auth.getUser().let {
+            requestBuilder.addHeader(HEADER_AUTHORIZATION, "Bearer ${it?.token}")
         }
 
         return requestBuilder

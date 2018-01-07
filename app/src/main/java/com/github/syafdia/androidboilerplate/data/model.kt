@@ -1,7 +1,6 @@
 package com.github.syafdia.androidboilerplate.data.model
 
 import android.arch.persistence.room.*
-import com.github.syafdia.androidboilerplate.core.auth.AuthUser
 
 enum class UserType {
     ROOT,
@@ -11,17 +10,16 @@ enum class UserType {
 
 @Entity(tableName = "users")
 data class User(
-        override val token: String,
-
         @PrimaryKey
         val id: String,
+        val token: String,
         val username: String,
         val fullName: String,
         val avatar: String,
 
         @TypeConverters(UserTypeConverter::class)
         val type: UserType
-) : AuthUser
+)
 
 class UserTypeConverter {
 

@@ -1,7 +1,7 @@
 package com.github.syafdia.androidboilerplate.feature.splash
 
 import com.github.syafdia.androidboilerplate.config.AppConfig
-import com.github.syafdia.androidboilerplate.core.auth.Auth
+import com.github.syafdia.androidboilerplate.core.Auth
 import com.github.syafdia.androidboilerplate.feature.BaseViewModel
 import com.github.syafdia.androidboilerplate.core.provider.SchedulerProvider
 import com.github.syafdia.androidboilerplate.data.repository.UserRepository
