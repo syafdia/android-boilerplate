@@ -27,18 +27,24 @@ class DashboardViewModel(
     lateinit var navigator: DashboardNavigator
 
     init {
-        val authUser = auth.getUser()
+        compositeDisposable.add(
+                auth.userSubject
+                        .subscribe { maybeAuthUser -> run {
+                            val authUser = maybeAuthUser.blockingGet()
 
-        if (authUser == null) {
-            userRepository
-                    .deleteAuthenticated()
-                    .subscribeOn(schedulerProvider.io())
-                    .observeOn(schedulerProvider.ui())
-                    .subscribe { _ -> navigator.toLoginActivity()}
-        } else {
-            authUserUsername.set(authUser.username)
-            authUserFullName.set(authUser.fullName)
-        }
+                            if (authUser == null) {
+                                userRepository
+                                        .deleteAuthenticated()
+                                        .subscribeOn(schedulerProvider.io())
+                                        .observeOn(schedulerProvider.ui())
+                                        .subscribe { _ -> navigator.toLoginActivity()}
+                            } else {
+
+                                authUserUsername.set(authUser.username)
+                                authUserFullName.set(authUser.fullName)
+                            }
+                        }}
+        )
     }
 
     fun logout() {
