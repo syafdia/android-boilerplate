@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.preference.PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+
+    <EditTextPreference
+        android:key="PREFERENCE_BASE_URL"
+        android:title="@string/setting_titleBaseUrl"
+        android:summary="@string/setting_summaryBaseUrl"
+        />
+
+    <ListPreference
+        android:key="PREFERENCE_SPLASH_TIME_OUT"
+        android:title="@string/setting_titleSplashTimeOut"
+        android:summary="@string/setting_summarySplashTimeOut"
+        android:defaultValue="1"
+        android:entries="@array/setting_splashTimeOutEntries"
+        android:entryValues="@array/setting_splashTimeOutEntryValues"
+        />
+
+</android.support.v7.preference.PreferenceScreen>

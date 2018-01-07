@@ -24,13 +24,12 @@
             />
     </group>
 
-    <item android:title="Account">
+    <item android:title="Others">
         <menu>
             <item
                 android:id="@+id/item_dashboard_navSetting"
                 android:icon="@drawable/dashboard_naviconsetting"
                 android:title="Settings"
-                android:visible="false"
                 />
             <item
                 android:id="@+id/item_dashboard_navLogout"

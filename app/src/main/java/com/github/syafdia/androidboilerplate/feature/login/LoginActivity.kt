@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.support.v4.app.Fragment
 import com.github.syafdia.androidboilerplate.feature.BaseActivity
 import com.github.syafdia.androidboilerplate.R
+import com.github.syafdia.androidboilerplate.util.ext.setContentFragment
 import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.support.HasSupportFragmentInjector

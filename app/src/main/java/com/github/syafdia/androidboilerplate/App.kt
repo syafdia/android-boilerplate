@@ -45,13 +45,7 @@ class App : Application(), HasActivityInjector {
     override fun onCreate() {
         super.onCreate()
 
-        DaggerAppComponent.builder()
-                .appModule(AppModule(this))
-                .dataSourceModule(DataSourceModule())
-                .repositoryModule(RepositoryModule())
-                .build()
-                .inject(this)
-
+        AppConfig.init(this)
         JodaTimeAndroid.init(this)
 
         if (AppConfig.DEBUG) {
@@ -60,9 +54,20 @@ class App : Application(), HasActivityInjector {
         } else {
             Timber.plant(CrashReportingTree())
         }
+
+        initDagger()
     }
 
     override fun activityInjector(): AndroidInjector<Activity> {
         return activityDispatchingAndroidInjector
+    }
+
+    private fun initDagger() {
+        DaggerAppComponent.builder()
+                .appModule(AppModule(this))
+                .dataSourceModule(DataSourceModule())
+                .repositoryModule(RepositoryModule())
+                .build()
+                .inject(this)
     }
 }

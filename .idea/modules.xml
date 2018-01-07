@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/AndroidBoilerplate.iml" filepath="$PROJECT_DIR$/AndroidBoilerplate.iml" />
-      <module fileurl="file://$PROJECT_DIR$/androidquark/androidquark.iml" filepath="$PROJECT_DIR$/androidquark/androidquark.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

@@ -29,6 +29,7 @@ class SplashActivity : BaseActivity(), SplashNavigator {
                 Manifest.permission.READ_PHONE_STATE,
                 Manifest.permission.WRITE_EXTERNAL_STORAGE,
                 Manifest.permission.ACCESS_NETWORK_STATE,
+
                 Manifest.permission.ACCESS_FINE_LOCATION
         ).toTypedArray()
     }
@@ -108,11 +109,11 @@ class SplashActivity : BaseActivity(), SplashNavigator {
     }
 
     private fun isOverlayPermissionGranted(): Boolean {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            return true
+        return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            Settings.canDrawOverlays(this)
+        } else {
+            true
         }
-
-        return Settings.canDrawOverlays(this)
     }
 
     private fun requestMultiplePermissions() {
@@ -127,9 +128,12 @@ class SplashActivity : BaseActivity(), SplashNavigator {
             return
         }
 
-        retryMultiplePermissionsRequest--
-
-        requestPermissions(PERMISSIONS, REQ_CODE_GET_ALL_PERMISSIONS)
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            retryMultiplePermissionsRequest--
+            requestPermissions(PERMISSIONS, REQ_CODE_GET_ALL_PERMISSIONS)
+        } else {
+            retryMultiplePermissionsRequest = 0
+        }
     }
 
     private fun isMultiplePermissionsGranted(): Boolean {

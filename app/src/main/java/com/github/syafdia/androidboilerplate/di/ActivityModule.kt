@@ -5,7 +5,6 @@ import com.github.syafdia.androidboilerplate.feature.dashboard.DashboardModule
 import com.github.syafdia.androidboilerplate.feature.login.LoginActivity
 import com.github.syafdia.androidboilerplate.feature.login.LoginModule
 import com.github.syafdia.androidboilerplate.feature.setting.SettingActivity
-import com.github.syafdia.androidboilerplate.feature.setting.SettingModule
 import com.github.syafdia.androidboilerplate.feature.splash.SplashActivity
 import com.github.syafdia.androidboilerplate.feature.splash.SplashModule
 import dagger.Module
@@ -24,6 +23,6 @@ abstract class ActivityModule {
     @ContributesAndroidInjector(modules = [DashboardModule::class])
     abstract fun bindDashboardActivity(): DashboardActivity
 
-    @ContributesAndroidInjector(modules = [SettingModule::class])
+    @ContributesAndroidInjector()
     abstract fun bindSettingActivity(): SettingActivity
 }
