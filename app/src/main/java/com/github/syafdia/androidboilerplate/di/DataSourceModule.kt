@@ -4,8 +4,6 @@ import com.github.syafdia.androidboilerplate.core.apiclient.ApiClient
 import com.github.syafdia.androidboilerplate.data.source.api.UserApi
 import com.github.syafdia.androidboilerplate.data.source.room.AppDatabase
 import com.github.syafdia.androidboilerplate.data.source.room.UserDao
-import com.github.syafdia.androidboilerplate.data.source.storage.Storage
-import com.github.syafdia.androidboilerplate.data.source.storage.UserStorage
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton
@@ -23,12 +21,6 @@ class DataSourceModule {
     @Singleton
     fun provideUserDao(appDatabase: AppDatabase): UserDao {
         return appDatabase.userDao()
-    }
-
-    @Provides
-    @Singleton
-    fun provideUserStorage(storage: Storage): UserStorage {
-        return UserStorage(storage)
     }
 
 }

@@ -56,14 +56,11 @@ class LoginViewModel(
         isLoading.set(true)
 
         userRepository.authenticate(username, password)
-                .flatMap { user -> run {
-                    auth.userSubject.onNext(Maybe.just(user))
-                    userRepository.setAuthenticated(user)
-                }}
                 .subscribeOn(schedulerProvider.io())
                 .observeOn(schedulerProvider.ui())
                 .subscribe(
-                        { _ ->
+                        { user ->
+                            auth.setUser(user)
                             isLoading.set(false)
                             navigator.openDashboardActivity()
                         },

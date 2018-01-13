@@ -27,28 +27,16 @@ class DashboardViewModel(
     lateinit var navigator: DashboardNavigator
 
     init {
-        compositeDisposable.add(
-                auth.userSubject
-                        .subscribe { maybeAuthUser -> run {
-                            val authUser = maybeAuthUser.blockingGet()
+        val authUser = auth.getUser()
 
-                            if (authUser == null) {
-                                userRepository
-                                        .deleteAuthenticated()
-                                        .subscribeOn(schedulerProvider.io())
-                                        .observeOn(schedulerProvider.ui())
-                                        .subscribe { _ -> navigator.toLoginActivity()}
-                            } else {
+        authUserUsername.set(authUser?.username)
+        authUserFullName.set(authUser?.fullName)
 
-                                authUserUsername.set(authUser.username)
-                                authUserFullName.set(authUser.fullName)
-                            }
-                        }}
-        )
+        auth.onUserDeleteListener = { navigator.toLoginActivity() }
     }
 
     fun logout() {
-        auth.logOut()
+        auth.deleteUser()
     }
 
     private fun getTodayDate(): String {

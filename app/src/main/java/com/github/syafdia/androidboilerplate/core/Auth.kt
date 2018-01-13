@@ -1,23 +1,30 @@
 package com.github.syafdia.androidboilerplate.core
 
 import com.github.syafdia.androidboilerplate.data.model.User
-import io.reactivex.Maybe
-import io.reactivex.subjects.BehaviorSubject
 
 
-class Auth {
+class Auth(private val storage: Storage) {
 
-    val userSubject: BehaviorSubject<Maybe<User>> = BehaviorSubject.create<Maybe<User>>()
+    companion object {
+        private const val AUTH_USER = "AUTH_USER"
+    }
+
+    var onUserDeleteListener: (() -> Unit)? = null
 
     fun isAuthenticated(): Boolean {
         return getUser() != null
     }
 
-    fun getUser(): User? {
-        return userSubject.value?.blockingGet()
+    fun setUser(user: User) {
+        storage.put(AUTH_USER, Json.stringify(user))
     }
 
-    fun logOut() {
-        userSubject.onNext(Maybe.empty())
+    fun getUser(): User? {
+        return Json.parseAs(User::class.java, storage.get(AUTH_USER))
+    }
+
+    fun deleteUser() {
+        storage.delete(AUTH_USER)
+        onUserDeleteListener?.invoke()
     }
 }

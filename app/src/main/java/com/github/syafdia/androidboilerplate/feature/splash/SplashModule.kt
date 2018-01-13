@@ -10,12 +10,8 @@ import dagger.Provides
 class SplashModule {
 
     @Provides
-    fun provideSplashViewModel(
-            auth: Auth,
-            schedulerProvider: SchedulerProvider,
-            userRepository: UserRepository
-    ): SplashViewModel {
-        return SplashViewModel(auth, schedulerProvider, userRepository)
+    fun provideSplashViewModel(auth: Auth): SplashViewModel {
+        return SplashViewModel(auth)
     }
 
 }

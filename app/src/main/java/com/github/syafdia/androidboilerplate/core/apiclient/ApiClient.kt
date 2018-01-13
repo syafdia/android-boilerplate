@@ -70,7 +70,7 @@ class ApiClient(
                     val response = okHttpClient.newCall(request).execute()
 
                     if (response.code() == 401) {
-                        auth.userSubject.onNext(Maybe.empty())
+                        auth.deleteUser()
                         Observable.empty<ResponseBody>()
                     }
 

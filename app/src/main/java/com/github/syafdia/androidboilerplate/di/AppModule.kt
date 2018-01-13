@@ -7,12 +7,12 @@ import com.github.syafdia.androidboilerplate.App
 import com.github.syafdia.androidboilerplate.config.AppConfig
 import com.github.syafdia.androidboilerplate.core.apiclient.ApiClient
 import com.github.syafdia.androidboilerplate.core.Auth
+import com.github.syafdia.androidboilerplate.core.Storage
 import com.github.syafdia.androidboilerplate.core.provider.AndroidResourceProvider
 import com.github.syafdia.androidboilerplate.core.provider.AndroidSchedulerProvider
 import com.github.syafdia.androidboilerplate.core.provider.ResourceProvider
 import com.github.syafdia.androidboilerplate.core.provider.SchedulerProvider
 import com.github.syafdia.androidboilerplate.data.source.room.AppDatabase
-import com.github.syafdia.androidboilerplate.data.source.storage.Storage
 import dagger.Module
 import dagger.Provides
 import okhttp3.OkHttpClient
@@ -55,8 +55,8 @@ class AppModule(private val app: App) {
 
     @Provides
     @Singleton
-    fun provideAuth(): Auth {
-        return Auth()
+    fun provideAuth(storage: Storage): Auth {
+        return Auth(storage)
     }
 
     @Provides
