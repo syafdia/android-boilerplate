@@ -68,10 +68,13 @@ class DashboardActivity : BaseActivity(), NavigationView.OnNavigationItemSelecte
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.item_dashboard_navFeature1 -> {
+                // TODO
+            }
+            R.id.item_dashboard_navFeature2 -> {
+                // TODO
             }
             R.id.item_dashboard_navSetting -> {
                 startActivity(Intent(this, SettingActivity::class.java))
-
             }
             R.id.item_dashboard_navLogout -> {
                 alertDialogLogOut.show()
@@ -82,7 +85,7 @@ class DashboardActivity : BaseActivity(), NavigationView.OnNavigationItemSelecte
         return true
     }
 
-    override fun toLoginActivity() {
+    override fun openLoginActivity() {
         val intent = Intent(this, LoginActivity::class.java)
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
 
@@ -91,8 +94,6 @@ class DashboardActivity : BaseActivity(), NavigationView.OnNavigationItemSelecte
     }
 
     private fun initializeUi() {
-
-
         setSupportActionBar(toolbar_dashboard)
 
         val toggle = ActionBarDrawerToggle(
@@ -118,5 +119,4 @@ class DashboardActivity : BaseActivity(), NavigationView.OnNavigationItemSelecte
                 }}
                 .create()
     }
-
 }

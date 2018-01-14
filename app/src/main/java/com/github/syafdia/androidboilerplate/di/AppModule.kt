@@ -74,6 +74,6 @@ class AppModule(private val app: App) {
     @Provides
     @Singleton
     fun provideApiClient(okHttpClient: OkHttpClient, auth: Auth): ApiClient {
-        return ApiClient(AppConfig.BASE_URL, okHttpClient, auth)
+        return ApiClient(okHttpClient, auth)
     }
 }

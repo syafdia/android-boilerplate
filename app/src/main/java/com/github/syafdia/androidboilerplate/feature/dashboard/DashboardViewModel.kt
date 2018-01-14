@@ -2,21 +2,12 @@ package com.github.syafdia.androidboilerplate.feature.dashboard
 
 import android.databinding.ObservableField
 import com.github.syafdia.androidboilerplate.core.Auth
-import com.github.syafdia.androidboilerplate.core.provider.ResourceProvider
-import com.github.syafdia.androidboilerplate.core.provider.SchedulerProvider
-import com.github.syafdia.androidboilerplate.data.model.User
-import com.github.syafdia.androidboilerplate.data.repository.UserRepository
 import com.github.syafdia.androidboilerplate.feature.BaseViewModel
 import org.joda.time.LocalDateTime
 import org.joda.time.format.DateTimeFormat
 
 
-class DashboardViewModel(
-        private val auth: Auth,
-        private val resourceProvider: ResourceProvider,
-        private val schedulerProvider: SchedulerProvider,
-        private val userRepository: UserRepository
-) : BaseViewModel() {
+class DashboardViewModel(private val auth: Auth) : BaseViewModel() {
 
     val authUserUsername = ObservableField<String>("")
 
@@ -32,7 +23,9 @@ class DashboardViewModel(
         authUserUsername.set(authUser?.username)
         authUserFullName.set(authUser?.fullName)
 
-        auth.onUserDeleteListener = { navigator.toLoginActivity() }
+        compositeDisposable.add(
+                auth.subject.subscribe { if (!it.isAuthenticated()) navigator.openLoginActivity() }
+        )
     }
 
     fun logout() {

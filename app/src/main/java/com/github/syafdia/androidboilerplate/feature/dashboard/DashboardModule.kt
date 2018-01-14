@@ -1,9 +1,6 @@
 package com.github.syafdia.androidboilerplate.feature.dashboard
 
 import com.github.syafdia.androidboilerplate.core.Auth
-import com.github.syafdia.androidboilerplate.core.provider.ResourceProvider
-import com.github.syafdia.androidboilerplate.core.provider.SchedulerProvider
-import com.github.syafdia.androidboilerplate.data.repository.UserRepository
 import dagger.Module
 import dagger.Provides
 
@@ -11,18 +8,8 @@ import dagger.Provides
 class DashboardModule {
 
     @Provides
-    fun provideDashboardViewModelFactory(
-            auth: Auth,
-            resourceProvider: ResourceProvider,
-            schedulerProvider: SchedulerProvider,
-            userRepository: UserRepository
-    ): DashboardViewModelFactory {
+    fun provideDashboardViewModelFactory(auth: Auth): DashboardViewModelFactory {
 
-        return DashboardViewModelFactory(
-                auth,
-                resourceProvider,
-                schedulerProvider,
-                userRepository
-        )
+        return DashboardViewModelFactory(auth)
     }
 }

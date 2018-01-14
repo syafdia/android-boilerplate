@@ -8,16 +8,11 @@ import com.github.syafdia.androidboilerplate.core.provider.SchedulerProvider
 import com.github.syafdia.androidboilerplate.data.repository.UserRepository
 
 
-class DashboardViewModelFactory(
-        private val auth: Auth,
-        private val resourceProvider: ResourceProvider,
-        private val schedulerProvider: SchedulerProvider,
-        private val userRepository: UserRepository
-) : ViewModelProvider.Factory {
+class DashboardViewModelFactory(private val auth: Auth) : ViewModelProvider.Factory {
 
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
         if (modelClass.isAssignableFrom(DashboardViewModel::class.java)) {
-            return DashboardViewModel(auth, resourceProvider, schedulerProvider, userRepository) as T
+            return DashboardViewModel(auth) as T
         }
 
         throw IllegalArgumentException("Unknown ViewModel class")

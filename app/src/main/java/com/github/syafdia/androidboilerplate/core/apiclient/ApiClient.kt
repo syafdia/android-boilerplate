@@ -1,5 +1,6 @@
 package com.github.syafdia.androidboilerplate.core.apiclient
 
+import com.github.syafdia.androidboilerplate.config.AppConfig
 import com.github.syafdia.androidboilerplate.core.Auth
 import io.reactivex.Maybe
 import io.reactivex.Observable
@@ -10,15 +11,10 @@ import okhttp3.ResponseBody
 import okhttp3.Request
 
 
-class ApiClient(
-        private val baseUrl: String,
-        private val okHttpClient: OkHttpClient,
-        private val auth: Auth
-) {
+class ApiClient(private val okHttpClient: OkHttpClient, private val auth: Auth) {
 
     companion object {
         const val HEADER_AUTHORIZATION = "Authorization"
-        const val GRAPHQL_END_POINT = "graphql"
     }
 
     fun post(route: String, data: Map<String, String>): Observable<ResponseBody> {
@@ -27,7 +23,7 @@ class ApiClient(
                 .build()
 
         val request = createRequestBuilder()
-                .url("$baseUrl/$route")
+                .url("${AppConfig.BASE_URL}/$route")
                 .post(formBody)
                 .build()
 
@@ -35,7 +31,7 @@ class ApiClient(
     }
 
     fun get(route: String, data: Map<String, String>?): Observable<ResponseBody> {
-        val url = "$baseUrl/$route"
+        val url = "${AppConfig.BASE_URL}/$route"
         val httpUrl = data?.entries
                 ?.fold(
                         HttpUrl.parse(url)?.newBuilder(),
@@ -51,7 +47,7 @@ class ApiClient(
     }
 
     fun gql(gqlPayload: String): Observable<ResponseBody> {
-        return post(GRAPHQL_END_POINT, mapOf("query" to gqlPayload))
+        return post(AppConfig.GRAPHQL_END_POINT, mapOf("query" to gqlPayload))
     }
 
     private fun createRequestBuilder(): Request.Builder {

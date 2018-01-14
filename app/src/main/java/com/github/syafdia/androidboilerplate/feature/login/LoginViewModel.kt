@@ -2,13 +2,12 @@ package com.github.syafdia.androidboilerplate.feature.login
 
 import android.databinding.ObservableBoolean
 import android.databinding.ObservableField
+import com.github.syafdia.androidboilerplate.R
 import com.github.syafdia.androidboilerplate.core.Auth
 import com.github.syafdia.androidboilerplate.core.provider.ResourceProvider
 import com.github.syafdia.androidboilerplate.core.provider.SchedulerProvider
-import com.github.syafdia.androidboilerplate.feature.BaseViewModel
-import com.github.syafdia.androidboilerplate.R
 import com.github.syafdia.androidboilerplate.data.repository.UserRepository
-import io.reactivex.Maybe
+import com.github.syafdia.androidboilerplate.feature.BaseViewModel
 
 class LoginViewModel(
         private val auth: Auth,

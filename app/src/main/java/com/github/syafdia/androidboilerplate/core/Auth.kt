@@ -1,6 +1,7 @@
 package com.github.syafdia.androidboilerplate.core
 
 import com.github.syafdia.androidboilerplate.data.model.User
+import io.reactivex.subjects.PublishSubject
 
 
 class Auth(private val storage: Storage) {
@@ -9,7 +10,7 @@ class Auth(private val storage: Storage) {
         private const val AUTH_USER = "AUTH_USER"
     }
 
-    var onUserDeleteListener: (() -> Unit)? = null
+    val subject: PublishSubject<Auth> = PublishSubject.create()
 
     fun isAuthenticated(): Boolean {
         return getUser() != null
@@ -17,6 +18,7 @@ class Auth(private val storage: Storage) {
 
     fun setUser(user: User) {
         storage.put(AUTH_USER, Json.stringify(user))
+        subject.onNext(this)
     }
 
     fun getUser(): User? {
@@ -25,6 +27,6 @@ class Auth(private val storage: Storage) {
 
     fun deleteUser() {
         storage.delete(AUTH_USER)
-        onUserDeleteListener?.invoke()
+        subject.onNext(this)
     }
 }
