@@ -13,6 +13,7 @@ import com.github.syafdia.androidboilerplate.R
 import com.github.syafdia.androidboilerplate.feature.BaseActivity
 import com.github.syafdia.androidboilerplate.feature.dashboard.DashboardActivity
 import com.github.syafdia.androidboilerplate.feature.login.LoginActivity
+import com.github.syafdia.androidboilerplate.util.ext.showToast
 import javax.inject.Inject
 
 
@@ -143,7 +144,6 @@ class SplashActivity : BaseActivity(), SplashNavigator {
     }
 
     private fun showRequestPermissionsFailed() {
-        val message = "Please allow all permissions"
-        Toast.makeText(this, message, Toast.LENGTH_LONG).show()
+        showToast(getString(R.string.splash_permissionRequestsIgnored), Toast.LENGTH_LONG)
     }
 }

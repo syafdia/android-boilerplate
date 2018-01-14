@@ -8,6 +8,7 @@
 
     <string name="splash_logoDescription">App Logo</string>
     <string name="splash_welcome">WELCOME</string>
+    <string name="splash_permissionRequestsIgnored">Please allow all permissions</string>
 
     <string name="login_title">LOGIN</string>
     <string name="login_logoDescription">App Logo</string>
