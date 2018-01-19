@@ -6,10 +6,12 @@ import android.util.Log
 import com.facebook.stetho.Stetho
 import com.github.syafdia.androidboilerplate.core.CrashHandler
 import com.github.syafdia.androidboilerplate.config.AppConfig
+import com.github.syafdia.androidboilerplate.core.Json
 import com.github.syafdia.androidboilerplate.di.AppModule
 import com.github.syafdia.androidboilerplate.di.DaggerAppComponent
 import com.github.syafdia.androidboilerplate.di.DataSourceModule
 import com.github.syafdia.androidboilerplate.di.RepositoryModule
+import com.google.gson.FieldNamingPolicy
 import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.HasActivityInjector
@@ -56,6 +58,7 @@ class App : Application(), HasActivityInjector {
         }
 
         initDagger()
+        Json.defaultFieldNamingPolicy = FieldNamingPolicy.LOWER_CASE_WITH_UNDERSCORES
     }
 
     override fun activityInjector(): AndroidInjector<Activity> {

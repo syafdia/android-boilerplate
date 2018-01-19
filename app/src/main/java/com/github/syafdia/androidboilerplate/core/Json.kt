@@ -1,32 +1,57 @@
 package com.github.syafdia.androidboilerplate.core
 
+import com.github.salomonbrys.kotson.jsonArray
 import com.google.gson.*
 
 
 object Json {
 
-    fun <T> parseAs(clazz: Class<T>, json: String): T? {
+    var defaultFieldNamingPolicy: FieldNamingPolicy = FieldNamingPolicy.IDENTITY
+
+    fun <T> parseAs(clazz: Class<T>, jsonStr: String, fieldNamingPolicy: FieldNamingPolicy? = null): T? {
         return try {
-            createGsonInstance().fromJson(json, clazz)
+            createGsonInstance(fieldNamingPolicy).fromJson(jsonStr, clazz)
         } catch (e: Exception) {
             null
         }
-
     }
 
-    fun parse(json: String): JsonObject {
-        val jsonObject = JsonParser().parse(json).asJsonObject
+    fun <T> parseAsListOf(clazz: Class<T>,
+                          json: String,
+                          fieldNamingPolicy: FieldNamingPolicy? = null
+    ): List<T> {
+        val gson = createGsonInstance(fieldNamingPolicy)
 
-        return jsonObject ?: JsonObject()
+        return try {
+            parseAsJsonArray(json).map { gson.fromJson(it, clazz) }
+        } catch (e: Exception) {
+            listOf()
+        }
     }
 
-    fun <T : Any> stringify(t: T): String {
-        return createGsonInstance().toJson(t)
+    fun parseAsJsonObject(json: String): JsonObject? {
+        return try {
+            JsonParser().parse(json).asJsonObject
+        } catch (e: Exception) {
+            null
+        }
     }
 
-    private fun createGsonInstance(): Gson {
+    fun parseAsJsonArray(json: String): JsonArray {
+        return try {
+            JsonParser().parse(json).asJsonArray
+        } catch (e: Exception) {
+            jsonArray()
+        }
+    }
+
+    fun <T : Any> stringify(t: T, fieldNamingPolicy: FieldNamingPolicy? = null): String {
+        return createGsonInstance(fieldNamingPolicy).toJson(t)
+    }
+
+    private fun createGsonInstance(fieldNamingPolicy: FieldNamingPolicy? = null): Gson {
         return GsonBuilder()
-                .setFieldNamingPolicy(FieldNamingPolicy.LOWER_CASE_WITH_UNDERSCORES)
+                .setFieldNamingPolicy(fieldNamingPolicy ?: defaultFieldNamingPolicy)
                 .create()
     }
 }
