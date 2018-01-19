@@ -6,7 +6,11 @@ import com.google.gson.*
 
 object Json {
 
-    var defaultFieldNamingPolicy: FieldNamingPolicy = FieldNamingPolicy.IDENTITY
+    private var defaultFieldNamingPolicy: FieldNamingPolicy = FieldNamingPolicy.IDENTITY
+
+    fun setDefaultFieldNamingPolicy(defaultFieldNamingPolicy: FieldNamingPolicy) {
+        this.defaultFieldNamingPolicy = defaultFieldNamingPolicy
+    }
 
     fun <T> parseAs(clazz: Class<T>, jsonStr: String, fieldNamingPolicy: FieldNamingPolicy? = null): T? {
         return try {
