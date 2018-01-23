@@ -56,7 +56,7 @@ class LoginViewModel(
 
         userRepository.authenticate(username, password)
                 .subscribeOn(schedulerProvider.io())
-                .observeOn(schedulerProvider.ui())
+                .observeOn(schedulerProvider.main())
                 .subscribe(
                         { user ->
                             auth.setUser(user)

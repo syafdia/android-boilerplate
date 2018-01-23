@@ -6,12 +6,6 @@ import com.google.gson.*
 
 object Json {
 
-    private var defaultFieldNamingPolicy: FieldNamingPolicy = FieldNamingPolicy.IDENTITY
-
-    fun setDefaultFieldNamingPolicy(defaultFieldNamingPolicy: FieldNamingPolicy) {
-        this.defaultFieldNamingPolicy = defaultFieldNamingPolicy
-    }
-
     fun <T> parseAs(clazz: Class<T>, jsonStr: String, fieldNamingPolicy: FieldNamingPolicy? = null): T? {
         return try {
             createGsonInstance(fieldNamingPolicy).fromJson(jsonStr, clazz)
@@ -55,7 +49,7 @@ object Json {
 
     private fun createGsonInstance(fieldNamingPolicy: FieldNamingPolicy? = null): Gson {
         return GsonBuilder()
-                .setFieldNamingPolicy(fieldNamingPolicy ?: defaultFieldNamingPolicy)
+                .setFieldNamingPolicy(fieldNamingPolicy ?: FieldNamingPolicy.IDENTITY)
                 .create()
     }
 }

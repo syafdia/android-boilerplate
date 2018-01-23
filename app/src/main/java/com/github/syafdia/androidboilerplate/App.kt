@@ -49,7 +49,6 @@ class App : Application(), HasActivityInjector {
 
         AppConfig.init(this)
         JodaTimeAndroid.init(this)
-        Json.setDefaultFieldNamingPolicy(FieldNamingPolicy.LOWER_CASE_WITH_UNDERSCORES)
 
         if (AppConfig.DEBUG) {
             Stetho.initializeWithDefaults(this)

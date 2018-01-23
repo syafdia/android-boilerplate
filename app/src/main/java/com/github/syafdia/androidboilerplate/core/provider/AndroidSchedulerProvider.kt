@@ -8,7 +8,7 @@ import io.reactivex.android.schedulers.AndroidSchedulers
 
 class AndroidSchedulerProvider : SchedulerProvider {
 
-    override fun ui(): Scheduler {
+    override fun main(): Scheduler {
         return AndroidSchedulers.mainThread()
     }
 

@@ -81,6 +81,7 @@ class JsonTest {
         assertArrayEquals(expectations.toTypedArray(), persons.toTypedArray())
     }
 
+    @Test
     fun parseAsJsonArray_JsonArrayOfObjectCreatedSuccessfully() {
         val personsStr = """
             [
