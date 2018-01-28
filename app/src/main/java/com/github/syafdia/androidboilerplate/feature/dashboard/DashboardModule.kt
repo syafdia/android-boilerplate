@@ -9,7 +9,10 @@ class DashboardModule {
 
     @Provides
     fun provideDashboardViewModelFactory(auth: Auth): DashboardViewModelFactory {
-
-        return DashboardViewModelFactory(auth)
+        return DashboardViewModelFactory(
+                GetAuthUserUseCase(auth),
+                DeleteAuthUserUseCase(auth),
+                GetAuthSubjectUseCase(auth)
+        )
     }
 }
