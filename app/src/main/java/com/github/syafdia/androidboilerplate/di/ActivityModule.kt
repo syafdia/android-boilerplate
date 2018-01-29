@@ -2,6 +2,7 @@ package com.github.syafdia.androidboilerplate.di
 
 import com.github.syafdia.androidboilerplate.feature.dashboard.DashboardActivity
 import com.github.syafdia.androidboilerplate.feature.dashboard.DashboardModule
+import com.github.syafdia.androidboilerplate.feature.information.InformationActivity
 import com.github.syafdia.androidboilerplate.feature.login.LoginActivity
 import com.github.syafdia.androidboilerplate.feature.login.LoginModule
 import com.github.syafdia.androidboilerplate.feature.setting.SettingActivity
@@ -25,4 +26,7 @@ abstract class ActivityModule {
 
     @ContributesAndroidInjector()
     abstract fun bindSettingActivity(): SettingActivity
+
+    @ContributesAndroidInjector()
+    abstract fun bindInformationActivity(): InformationActivity
 }

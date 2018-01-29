@@ -87,6 +87,10 @@ dependencies {
     // JODA Time
     implementation 'net.danlew:android.joda:2.9.9'
 
+    // Fresco
+    implementation 'com.facebook.fresco:fresco:1.8.0'
+
+
     // UI
     implementation 'me.zhanghai.android.materialprogressbar:library:1.4.2'
 

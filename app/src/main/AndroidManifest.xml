@@ -48,6 +48,13 @@
             android:parentActivityName=".feature.dashboard.DashboardActivity"
             >
         </activity>
+        <activity
+            android:name=".feature.information.InformationActivity"
+            android:theme="@style/AppTheme"
+            android:label="@string/information_title"
+            android:parentActivityName=".feature.dashboard.DashboardActivity"
+            >
+        </activity>
     </application>
 
 </manifest>

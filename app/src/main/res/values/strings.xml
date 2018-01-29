@@ -29,4 +29,6 @@
     <string name="setting_titleSplashTimeOut">Splash Time Out</string>
     <string name="setting_summarySplashTimeOut">Set splash screen time out</string>
 
+    <string name="information_title">Info</string>
+
 </resources>

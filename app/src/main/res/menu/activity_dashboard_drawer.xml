@@ -15,7 +15,7 @@
         <item
             android:id="@+id/item_dashboard_navFeature1"
             android:icon="@drawable/dashboard_navfeature"
-            android:title="Feature 1"
+            android:title="Information"
             />
         <item
             android:id="@+id/item_dashboard_navFeature2"

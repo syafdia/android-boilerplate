@@ -17,6 +17,7 @@ import com.github.syafdia.androidboilerplate.feature.setting.SettingActivity
 import kotlinx.android.synthetic.main.activity_dashboard.*
 import javax.inject.Inject
 import android.content.Intent
+import com.github.syafdia.androidboilerplate.feature.information.InformationActivity
 
 
 class DashboardActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedListener, DashboardNavigator {
@@ -68,7 +69,7 @@ class DashboardActivity : BaseActivity(), NavigationView.OnNavigationItemSelecte
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.item_dashboard_navFeature1 -> {
-                // TODO
+                startActivity(Intent(this, InformationActivity::class.java))
             }
             R.id.item_dashboard_navFeature2 -> {
                 // TODO

@@ -21,7 +21,6 @@ class LoginActivity : BaseActivity(), HasSupportFragmentInjector {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        setContentView(viewId)
         setContentFragment(R.id.frameLayout_login_fragmentContainer, { LoginFragment() })
     }
 

@@ -63,6 +63,7 @@ class ApiClient(private val okHttpClient: OkHttpClient, private val auth: Auth) 
     private fun call(request: Request): Observable<ResponseBody> {
         return Observable
                 .defer {
+
                     val response = okHttpClient.newCall(request).execute()
 
                     if (response.code() == 401) {

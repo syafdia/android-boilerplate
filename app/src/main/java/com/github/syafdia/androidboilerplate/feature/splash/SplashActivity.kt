@@ -45,8 +45,6 @@ class SplashActivity : BaseActivity(), SplashNavigator {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        setContentView(viewId)
-
         splashViewModel.navigator = this
 
         if (!isOverlayPermissionGranted()) {

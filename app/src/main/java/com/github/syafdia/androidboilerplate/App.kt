@@ -3,6 +3,7 @@ package com.github.syafdia.androidboilerplate
 import android.app.Activity
 import android.app.Application
 import android.util.Log
+import com.facebook.drawee.backends.pipeline.Fresco
 import com.facebook.stetho.Stetho
 import com.github.syafdia.androidboilerplate.core.CrashHandler
 import com.github.syafdia.androidboilerplate.config.AppConfig
@@ -49,6 +50,7 @@ class App : Application(), HasActivityInjector {
 
         AppConfig.init(this)
         JodaTimeAndroid.init(this)
+        Fresco.initialize(this)
 
         if (AppConfig.DEBUG) {
             Stetho.initializeWithDefaults(this)
