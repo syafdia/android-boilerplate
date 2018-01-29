@@ -14,11 +14,16 @@ class LoginModule {
     @Provides
     fun provideLoginViewModelFactory(
             auth: Auth,
+            userRepository: UserRepository,
             resourceProvider: ResourceProvider,
-            schedulerProvider: SchedulerProvider,
-            userRepository: UserRepository
+            schedulerProvider: SchedulerProvider
     ): LoginViewModelFactory {
 
-        return LoginViewModelFactory(auth, resourceProvider, schedulerProvider, userRepository)
+        return LoginViewModelFactory(
+                AuthenticateUserUseCase(userRepository),
+                SaveAuthUserUseCase(auth),
+                resourceProvider,
+                schedulerProvider
+        )
     }
 }

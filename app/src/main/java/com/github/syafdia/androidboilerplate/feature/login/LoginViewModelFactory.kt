@@ -9,15 +9,20 @@ import com.github.syafdia.androidboilerplate.data.repository.UserRepository
 
 
 class LoginViewModelFactory(
-        private val auth: Auth,
+        private val authenticateUserUseCase: AuthenticateUserUseCase,
+        private val saveAuthUserUseCase: SaveAuthUserUseCase,
         private val resourceProvider: ResourceProvider,
-        private val schedulerProvider: SchedulerProvider,
-        private val userRepository: UserRepository
+        private val schedulerProvider: SchedulerProvider
 ) : ViewModelProvider.Factory {
 
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
         if (modelClass.isAssignableFrom(LoginViewModel::class.java)) {
-            return LoginViewModel(auth, resourceProvider, schedulerProvider, userRepository) as T
+            return LoginViewModel(
+                    authenticateUserUseCase,
+                    saveAuthUserUseCase,
+                    resourceProvider,
+                    schedulerProvider
+            ) as T
         }
 
         throw IllegalArgumentException("Unknown ViewModel class")

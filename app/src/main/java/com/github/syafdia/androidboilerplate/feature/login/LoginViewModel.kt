@@ -3,24 +3,24 @@ package com.github.syafdia.androidboilerplate.feature.login
 import android.databinding.ObservableBoolean
 import android.databinding.ObservableField
 import com.github.syafdia.androidboilerplate.R
-import com.github.syafdia.androidboilerplate.core.Auth
 import com.github.syafdia.androidboilerplate.core.provider.ResourceProvider
 import com.github.syafdia.androidboilerplate.core.provider.SchedulerProvider
-import com.github.syafdia.androidboilerplate.data.repository.UserRepository
 import com.github.syafdia.androidboilerplate.feature.BaseViewModel
 
 class LoginViewModel(
-        private val auth: Auth,
+        private val authenticateUserUseCase: AuthenticateUserUseCase,
+        private val saveAuthUserUseCase: SaveAuthUserUseCase,
         private val resourceProvider: ResourceProvider,
-        private val schedulerProvider: SchedulerProvider,
-        private val userRepository: UserRepository
+        private val schedulerProvider: SchedulerProvider
 ) : BaseViewModel() {
 
-    val usernameError = ObservableField<String>()
+    val usernameError = ObservableField<String>("")
 
-    val passwordError = ObservableField<String>()
+    val passwordError = ObservableField<String>("")
 
     val isLoading = ObservableBoolean(false)
+
+    val generalError = ObservableField<String>("")
 
     lateinit var navigator: LoginNavigator
 
@@ -54,18 +54,19 @@ class LoginViewModel(
 
         isLoading.set(true)
 
-        userRepository.authenticate(username, password)
+        authenticateUserUseCase.execute(username, password)
                 .subscribeOn(schedulerProvider.io())
                 .observeOn(schedulerProvider.main())
                 .subscribe(
                         { user ->
-                            auth.setUser(user)
+
+                            saveAuthUserUseCase.execute(user)
                             isLoading.set(false)
                             navigator.openDashboardActivity()
                         },
                         { err ->
                             isLoading.set(false)
-                            navigator.handleError(err)
+                            generalError.set(err.message)
                         }
                 )
 

@@ -34,7 +34,8 @@ class DashboardViewModel(
 
     fun observeOnAuthUser() {
         compositeDisposable.add(
-                getAuthSubjectUseCase.execute().subscribe { if (!it.isAuthenticated()) navigator.openLoginActivity() }
+                getAuthSubjectUseCase.execute()
+                        .subscribe { if (!it.isAuthenticated()) navigator.openLoginActivity() }
         )
     }
 

@@ -3,14 +3,13 @@ package com.github.syafdia.androidboilerplate.feature.login
 
 import android.arch.lifecycle.ViewModelProviders
 import android.content.Intent
+import android.databinding.Observable
 import android.os.Bundle
-import android.widget.Toast
-import com.android.databinding.library.baseAdapters.BR
-import com.github.syafdia.androidboilerplate.feature.BaseFragment
 import com.github.syafdia.androidboilerplate.R
 import com.github.syafdia.androidboilerplate.databinding.FragmentLoginBinding
+import com.github.syafdia.androidboilerplate.feature.BaseFragment
 import com.github.syafdia.androidboilerplate.feature.dashboard.DashboardActivity
-import timber.log.Timber
+import com.github.syafdia.androidboilerplate.util.ext.showToast
 import javax.inject.Inject
 
 
@@ -31,11 +30,17 @@ class LoginFragment : BaseFragment<FragmentLoginBinding, LoginViewModel>(), Logi
                 .get(LoginViewModel::class.java)
 
         viewModel.navigator = this
-    }
 
-    override fun handleError(throwable: Throwable) {
-        Timber.d(throwable)
-        Toast.makeText(activity, throwable.message, Toast.LENGTH_SHORT).show()
+        viewModel.generalError.addOnPropertyChangedCallback(object : Observable.OnPropertyChangedCallback() {
+            override fun onPropertyChanged(a: Observable?, b: Int) {
+                val generalErrorVal = viewModel.generalError.get()
+
+                if (generalErrorVal.isNotEmpty()) {
+                    activity?.showToast(generalErrorVal)
+                    viewModel.generalError.set("")
+                }
+            }
+        })
     }
 
     override fun openDashboardActivity() {
