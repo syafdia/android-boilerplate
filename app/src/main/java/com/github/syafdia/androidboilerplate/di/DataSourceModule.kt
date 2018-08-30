@@ -1,6 +1,6 @@
 package com.github.syafdia.androidboilerplate.di
 
-import com.github.syafdia.androidboilerplate.core.apiclient.ApiClient
+import com.github.syafdia.androidboilerplate.data.source.api.ApiClient
 import com.github.syafdia.androidboilerplate.data.source.api.UserApi
 import com.github.syafdia.androidboilerplate.data.source.room.AppDatabase
 import com.github.syafdia.androidboilerplate.data.source.room.UserDao

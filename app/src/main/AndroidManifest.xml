@@ -24,7 +24,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".feature.splash.SplashActivity">
+        <activity android:name=".feature.splash.presentation.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
@@ -32,12 +32,12 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".feature.login.LoginActivity"
+            android:name=".feature.login.presentation.LoginActivity"
             android:label="@string/login_title"
             android:theme="@style/AppTheme">
         </activity>
         <activity
-            android:name=".feature.dashboard.DashboardActivity"
+            android:name=".feature.dashboard.presentation.DashboardActivity"
             android:label="@string/dashboard_title"
             android:theme="@style/AppTheme">
         </activity>
@@ -45,14 +45,14 @@
             android:name=".feature.setting.SettingActivity"
             android:theme="@style/AppTheme"
             android:label="@string/setting_title"
-            android:parentActivityName=".feature.dashboard.DashboardActivity"
+            android:parentActivityName=".feature.dashboard.presentation.DashboardActivity"
             >
         </activity>
         <activity
-            android:name=".feature.information.InformationActivity"
+            android:name=".feature.information.presentation.InformationActivity"
             android:theme="@style/AppTheme"
             android:label="@string/information_title"
-            android:parentActivityName=".feature.dashboard.DashboardActivity"
+            android:parentActivityName=".feature.dashboard.presentation.DashboardActivity"
             >
         </activity>
     </application>

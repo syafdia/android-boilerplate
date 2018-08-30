@@ -1,8 +1,8 @@
 package com.github.syafdia.androidboilerplate.di
 
-import com.github.syafdia.androidboilerplate.feature.information.InformationFragment
+import com.github.syafdia.androidboilerplate.feature.information.presentation.InformationFragment
 import com.github.syafdia.androidboilerplate.feature.information.InformationModule
-import com.github.syafdia.androidboilerplate.feature.login.LoginFragment
+import com.github.syafdia.androidboilerplate.feature.login.presentation.LoginFragment
 import com.github.syafdia.androidboilerplate.feature.login.LoginModule
 import com.github.syafdia.androidboilerplate.feature.setting.SettingFragment
 import dagger.Module

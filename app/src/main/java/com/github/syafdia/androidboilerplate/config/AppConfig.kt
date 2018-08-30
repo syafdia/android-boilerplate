@@ -11,8 +11,6 @@ object AppConfig {
 
     const val SQLITE_DB_NAME = BuildConfig.APPLICATION_ID + "-main.db"
 
-    const val GRAPHQL_END_POINT = "graphql"
-
     val DEBUG = BuildConfig.DEBUG
 
     val BASE_URL: String

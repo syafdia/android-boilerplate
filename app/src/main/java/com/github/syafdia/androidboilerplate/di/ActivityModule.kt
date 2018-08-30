@@ -1,12 +1,12 @@
 package com.github.syafdia.androidboilerplate.di
 
-import com.github.syafdia.androidboilerplate.feature.dashboard.DashboardActivity
+import com.github.syafdia.androidboilerplate.feature.dashboard.presentation.DashboardActivity
 import com.github.syafdia.androidboilerplate.feature.dashboard.DashboardModule
-import com.github.syafdia.androidboilerplate.feature.information.InformationActivity
-import com.github.syafdia.androidboilerplate.feature.login.LoginActivity
+import com.github.syafdia.androidboilerplate.feature.information.presentation.InformationActivity
+import com.github.syafdia.androidboilerplate.feature.login.presentation.LoginActivity
 import com.github.syafdia.androidboilerplate.feature.login.LoginModule
 import com.github.syafdia.androidboilerplate.feature.setting.SettingActivity
-import com.github.syafdia.androidboilerplate.feature.splash.SplashActivity
+import com.github.syafdia.androidboilerplate.feature.splash.presentation.SplashActivity
 import com.github.syafdia.androidboilerplate.feature.splash.SplashModule
 import dagger.Module
 import dagger.android.ContributesAndroidInjector

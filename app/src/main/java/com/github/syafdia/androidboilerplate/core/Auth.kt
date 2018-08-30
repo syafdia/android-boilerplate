@@ -1,32 +1,31 @@
 package com.github.syafdia.androidboilerplate.core
 
-import com.github.syafdia.androidboilerplate.data.model.User
+import io.reactivex.Single
 import io.reactivex.subjects.PublishSubject
+import kotlin.reflect.KClass
 
 
 class Auth(private val storage: Storage) {
 
-    companion object {
-        private const val AUTH_USER = "AUTH_USER"
-    }
-
     val subject: PublishSubject<Auth> = PublishSubject.create()
 
-    fun isAuthenticated(): Boolean {
-        return getUser() != null
+    fun setData(data: String): Single<Unit> {
+        return storage.putAsync(AUTH_DATA, data).map { subject.onNext(this) }
     }
 
-    fun setUser(user: User) {
-        storage.put(AUTH_USER, Json.stringify(user))
-        subject.onNext(this)
+    fun getData(): Single<String> {
+        return storage.getAsync(AUTH_DATA)
     }
 
-    fun getUser(): User? {
-        return Json.parseAs(User::class.java, storage.get(AUTH_USER))
+    fun <T: Any> getDataAs(kClazz: KClass<T>): Single<T> {
+        return getData().map { Json.parseAs(kClazz, it) }
     }
 
-    fun deleteUser() {
-        storage.delete(AUTH_USER)
-        subject.onNext(this)
+    fun deleteData(): Single<Unit> {
+        return storage.deleteAsync(AUTH_DATA).map { subject.onNext(this) }
+    }
+
+    companion object {
+        private const val AUTH_DATA = "AUTH_DATA"
     }
 }

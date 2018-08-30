@@ -8,7 +8,7 @@
         <import type="android.view.View" />
         <variable
             name="viewModel"
-            type="com.github.syafdia.androidboilerplate.feature.login.LoginViewModel"
+            type="com.github.syafdia.androidboilerplate.feature.login.presentation.LoginViewModel"
             />
     </data>
 

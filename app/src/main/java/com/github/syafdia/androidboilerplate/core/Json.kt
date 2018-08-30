@@ -1,12 +1,26 @@
 package com.github.syafdia.androidboilerplate.core
 
 import com.github.salomonbrys.kotson.jsonArray
+import com.github.salomonbrys.kotson.toMap
 import com.google.gson.*
+import kotlin.reflect.KClass
 
 
 object Json {
 
-    fun <T> parseAs(clazz: Class<T>, jsonStr: String, fieldNamingPolicy: FieldNamingPolicy? = null): T? {
+    fun <T: Any> parseAs(
+            clazz: KClass<T>,
+            jsonStr: String,
+            fieldNamingPolicy: FieldNamingPolicy? = null
+    ): T? {
+        return parseAs(clazz.java, jsonStr, fieldNamingPolicy)
+    }
+
+    fun <T> parseAs(
+            clazz: Class<T>,
+            jsonStr: String,
+            fieldNamingPolicy: FieldNamingPolicy? = null
+    ): T? {
         return try {
             createGsonInstance(fieldNamingPolicy).fromJson(jsonStr, clazz)
         } catch (e: Exception) {
@@ -14,9 +28,10 @@ object Json {
         }
     }
 
-    fun <T> parseAsListOf(clazz: Class<T>,
-                          json: String,
-                          fieldNamingPolicy: FieldNamingPolicy? = null
+    fun <T> parseAsListOf(
+            clazz: Class<T>,
+            json: String,
+            fieldNamingPolicy: FieldNamingPolicy? = null
     ): List<T> {
         val gson = createGsonInstance(fieldNamingPolicy)
 
@@ -24,6 +39,20 @@ object Json {
             parseAsJsonArray(json).map { gson.fromJson(it, clazz) }
         } catch (e: Exception) {
             listOf()
+        }
+    }
+
+    fun <K, V> parseAsMapOf(
+            json: String,
+            fieldNamingPolicy: FieldNamingPolicy? = null
+    ): Map<K, V> {
+        return try {
+            parseAsJsonObject(json)?.toMap()
+                    ?.map { (it.key as K) to (it.value as V) }
+                    ?.toMap()
+                    ?: mapOf()
+        } catch (e: Exception) {
+            mapOf()
         }
     }
 
@@ -45,6 +74,14 @@ object Json {
 
     fun <T : Any> stringify(t: T, fieldNamingPolicy: FieldNamingPolicy? = null): String {
         return createGsonInstance(fieldNamingPolicy).toJson(t)
+    }
+
+    fun <T : Any> stringifyWithNull(t: T, fieldNamingPolicy: FieldNamingPolicy? = null): String {
+        return GsonBuilder()
+                .setFieldNamingPolicy(fieldNamingPolicy ?: FieldNamingPolicy.IDENTITY)
+                .serializeNulls()
+                .create()
+                .toJson(t)
     }
 
     private fun createGsonInstance(fieldNamingPolicy: FieldNamingPolicy? = null): Gson {

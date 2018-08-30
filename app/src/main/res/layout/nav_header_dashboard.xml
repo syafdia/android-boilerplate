@@ -8,7 +8,7 @@
         <import type="android.view.View" />
         <variable
             name="viewModel"
-            type="com.github.syafdia.androidboilerplate.feature.dashboard.DashboardViewModel"
+            type="com.github.syafdia.androidboilerplate.feature.dashboard.presentation.DashboardViewModel"
             />
     </data>
 
